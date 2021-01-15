@@ -21,7 +21,7 @@
     <script src="./static/js/policy/policy.js"></script>
     <script type="text/javascript">
         if (getParam("version") == '' || getParam("version") == null) {
-            location.replace('./term?version=20210112');
+            location.replace('./term.html?version=20210112');
         }
     </script>
 </head>
@@ -35,8 +35,8 @@
 	  document.write('<button class="dropbtn" onclick="myFunction()">' + version + ' <i class="fa fa-caret-down"></i></button>');
   </script>
   <div class="dropdown-content" id="myDropdown">
-    <a href="./term">Latest</a>
-    <a href="./term?version=20210112">20210112</a>
+    <a href="./term.html">Latest</a>
+    <a href="./term.html?version=20210112">20210112</a>
   </div>
   </div> 
 </div>

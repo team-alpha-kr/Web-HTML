@@ -21,7 +21,7 @@
     <script src="./static/js/policy/policy.js"></script>
     <script type="text/javascript">
         if (getParam("version") == '' || getParam("version") == null) {
-            location.replace('./privacy?version=20210112');
+            location.replace('./privacy.html?version=20210112');
         }
     </script>
 </head>
@@ -36,9 +36,9 @@
 	  document.write('<button class="dropbtn" onclick="myFunction()">' + version + ' <i class="fa fa-caret-down"></i></button>');
   </script>
   <div class="dropdown-content" id="myDropdown">
-    <a href="./privacy">Latest</a>
-    <a href="./privacy?version=20210108">20210108</a>
-    <a href="./privacy?version=20210112">20210112</a>
+    <a href="./privacy.html">Latest</a>
+    <a href="./privacy.html?version=20210108">20210108</a>
+    <a href="./privacy.html?version=20210112">20210112</a>
   </div>
   </div> 
 </div>
