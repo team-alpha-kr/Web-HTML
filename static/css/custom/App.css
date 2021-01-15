@@ -1,0 +1,354 @@
+
+    
+    .discord.button {
+        background-color: #748add !important;
+        color: white !important;
+    }
+
+    .kakao.button {
+        background-color: #fae100 !important;
+        color: #36181f !important;
+    }
+
+
+
+    .App {
+        text-align: center;
+    }
+
+    .App-logo {
+        height: 40vmin;
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .App-logo {
+            animation: App-logo-spin infinite 20s linear;
+        }
+    }
+
+    .App-header {
+        background-color: #282c34;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+    }
+
+    .App-link {
+        color: #61dafb;
+    }
+
+    @keyframes App-logo-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .footer {
+        width: 100%;
+        margin: 0;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background: #1b1e21;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .footer-topic {
+        display: block;
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        width: 100%;
+        font-family: "Noto_Sans_KR-Bold" !important;
+        padding-bottom: 20px;
+        text-align: 'center';
+    }
+
+    .footer-desc {
+        display: block;
+        color: white;
+        text-align: left;
+    }
+
+    .footer-desc a {
+        padding-top: 10px;
+        color: white;
+    }
+
+    .footer-desc a:hover {
+        color: white;
+    }
+
+    .footer-link {
+        padding-left: 5px;
+    }
+
+    .footer-box {
+        display: block;
+    }
+
+    .navbar-setting {
+        padding-bottom: 16px;
+        padding-top: 16px;
+        border-top: 1px white;
+    }
+
+    .nav-item a {
+        padding: 8px 8px 8px 8px;
+        color: white;
+    }
+
+    .navbar {
+        width: 100%;
+        margin: 0;
+    }
+
+    .logo {
+        border-radius: 30%;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .navbar {
+            position: absolute;
+            right: 0;
+            list-style-type: none;
+            z-index: 2;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .nav-link {
+            text-align: left;
+        }
+    }
+
+    .navbar-main {
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 8px;
+    }
+
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #FFF;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    body {
+        background: #303030;
+    }
+
+    .index {
+        padding-top: 250px;
+        padding-bottom: 250px;
+        text-align: center;
+        background: linear-gradient(45deg, rgb(99, 99, 250), rgb(99, 45, 99));
+        color: white;
+    }
+
+    .index-topic {
+        display: block;
+        font-family: Noto_Sans_KR-Bold;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .index-desc {
+        display: block;
+        font-family: Noto_Sans_KR-Regular;
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+
+    .Link,
+    .Link:hover {
+        color: white;
+    }
+
+    .btn-Link,
+    .btn-Link:hover {
+        text-decoration: none;
+    }
+
+    .index-button {
+        padding: 10px 30px 10px 30px;
+        background: white;
+        color: black;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .index-button:hover {
+        color: white;
+        background: black;
+        text-decoration: none;
+    }
+
+    .right {
+        padding-right: 20px;
+        text-align: right;
+    }
+
+    .left {
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .cr-0 {
+        color: white;
+    }
+
+    .cr-1 {
+        color: black;
+    }
+
+    .bg-1 {
+        background: whitesmoke;
+        color: black;
+    }
+
+    .bg-2 {
+        background: linear-gradient(135deg, rgb(99, 99, 250), rgb(99, 45, 99));
+    }
+
+    .intro-topic {
+        display: block;
+        font-family: Noto_Sans_KR-Bold;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .intro-desc {
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 20px;
+        font-family: Noto_Sans_KR-Regular;
+    }
+
+    .introduce {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .intro-btn {
+        padding: 10px 30px 10px 30px;
+        background: #00b5ad;
+        font-family: Noto_Sans_KR-Regular;
+        font-size: 15px;
+        border-radius: 20px;
+        transition: 0.3s;
+    }
+
+    .intro-btn:hover {
+        background: #00959d;
+        color: white;
+        text-decoration: none;
+    }
+
+    .disable {
+        cursor: default;
+        opacity: 45% !important;
+        pointer-events: none !important;
+    }
+
+    .index-small {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        text-align: center;
+        background: linear-gradient(45deg, rgb(99, 99, 250), rgb(99, 45, 99));
+        color: white;
+    }
+
+    .index-topic-small {
+        display: block;
+        font-family: Noto_Sans_KR-Bold;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .index-full {
+        --height: 44vh;
+        padding-top: var(--height);
+        padding-bottom: var(--height);
+        text-align: center;
+        background: linear-gradient(45deg, rgb(99, 99, 250), rgb(99, 45, 99));
+        color: white;
+    }
+
+
+    .bot-card-img {
+        width: 30px;
+        border-radius: 10px;
+    }
+
+    .bot-card {
+        width: 18rem;
+        border-radius: 20px;
+        border-color: #303030;
+    }
+
+    .bot-card-title {
+        margin: 0;
+        padding-left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Noto_Sans_KR-Bold;
+    }
+
+    .bot-card-text {
+        padding-top: 20px;
+    }
+
+    .bot-dividers {
+        background: #404040;
+        height: 0.5px;
+    }
+
+    .bot-button {
+        color: white;
+        border-radius: 10px;
+        padding: 5px 35%;
+    }
+
+    .bot-button:hover {
+        color: white;
+        background: #303030;
+        text-decoration: none;
+    }
+
+    .dropdown-item {
+        color: black !important;
+    }
+
+    .swal-text {
+        text-align: center;
+    }

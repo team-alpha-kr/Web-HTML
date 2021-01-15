@@ -1,0 +1,17 @@
+/* pr-area */
+.pr-area {
+	overflow:hidden;
+	width:100%;
+	min-height:100%;
+}
+	.pr-area .board-side {
+		float:right;
+		width:33%;
+	}
+	.pr-area .board-box {
+		min-height:453px;
+	}
+	.pr-area .board-side:first-child {
+		float:left;
+		width:65%;
+	}

@@ -1,0 +1,19 @@
+@font-face{
+    font-family: "Nanum_Gothic-Bold";
+    src: url("../font/Nanum_Gothic/NanumGothic-Bold.ttf");
+}
+
+@font-face{
+    font-family: "Nanum_Gothic-Regular";
+    src: url("../font/Nanum_Gothic/NanumGothic-Regular.ttf");
+}
+
+@font-face{
+    font-family: "Noto_Sans_KR-Regular";
+    src: url("../font/Noto_Sans_KR/NotoSansKR-Regular.otf");
+}
+
+@font-face{
+    font-family: "Noto_Sans_KR-Bold";
+    src: url("../font/Noto_Sans_KR/NotoSansKR-Bold.otf");
+}
