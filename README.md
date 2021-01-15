@@ -19,9 +19,9 @@ $ git clone https://github.com/team-alpha-kr/Main-Web
 ```
 2
 ```sh
-$ yarn install
+$ npm i
 ```
 3
 ```sh
-$ yarn start
+$ npm start
 ```
