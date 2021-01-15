@@ -11,3 +11,17 @@ HTML과 Express 기반으로 제작하였습니다.
 | Test | Windows 10   | :white_check_mark:                |
 | Test | Windows Server 2012   | :white_check_mark:                |
 | Test | Windows Server 2019   | :white_check_mark:                |
+
+## 실행방법
+1
+```sh
+$ git clone https://github.com/team-alpha-kr/Main-Web
+```
+2
+```sh
+$ yarn install
+```
+3
+```sh
+$ yarn start
+```
