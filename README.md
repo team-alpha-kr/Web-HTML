@@ -15,7 +15,7 @@ HTML과 Express 기반으로 제작하였습니다.
 ## 실행방법
 1
 ```sh
-$ git clone https://github.com/team-alpha-kr/Main-Web
+$ git clone https://github.com/team-alpha-kr/Web-HTML
 ```
 2
 ```sh
