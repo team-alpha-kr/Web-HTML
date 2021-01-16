@@ -29,3 +29,7 @@ $ npm i
 ```sh
 $ npm start
 ```
+
+
+Author(s) : Norhu
+(C) Team Alpha All rights reserved.
