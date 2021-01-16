@@ -10,6 +10,9 @@ const port = config.port;
 
 app.use(express.static(__dirname + "/views"));
 app.use(express.static(__dirname + "/public"));
+app.use(function(req, res, next) {
+	res.status(404).send('404오류 찾지 못했습니다.');	
+})
 app.listen(port, () => {
     console.log(`Server Started (PORT ${config.port})`);
 });
