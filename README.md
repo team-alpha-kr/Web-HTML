@@ -31,5 +31,6 @@ $ npm start
 ```
 
 
-Author(s) : Norhu
+Author(s) : Norhu, 건유, AllPGS
+
 (C) Team Alpha All rights reserved.
