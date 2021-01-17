@@ -33,4 +33,5 @@ $ npm start
 
 Author(s) : Norhu1130
 
-(C) Team Alpha All rights reserved.
+[views,public](C) Team Alpha All rights reserved.
+[index.js,Core](C) norhu1130 All rights reserved.
