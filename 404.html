@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Team Alpha 공식 사이트">
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/custom/App.css">
+    <script src="/static/js/jquery-3.5.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/static/js/app.js"></script>
+    <title>Team Alpha</title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="App">
+            <div>
+                <div include-html="/components/navbar.html"></div>
+                <div class="index"><span class="index-topic">Team Alpha</span><span class="index-desc">공식 사이트</span><a href="/about.html" class="index-button">소개 보기</a></div>
+                <section class="introduce bg-1">
+                    <div class="container right"><span class="cr-1 intro-topic">대시보드</span><span class="cr-1 intro-desc">대시보드를 확인해 많은 정보를 볼 수 있습니다.</span><button class="cr-1 intro-btn disable">(준비 중)</button></div>
+                </section>
+                <section class="introduce bg-2">
+                    <div class="container left"><span class="cr-0 intro-topic">Projet MBOT</span><span class="cr-0 intro-desc">로그, 통계, 관리를 한 번에 서버 테러 위협으로 부터 안전한 봇입니다!</span><button class="cr-1 intro-btn disable">(준비 중)</button></div>
+                </section>
+                <section class="introduce bg-1">
+                    <div class="container right"><span class="cr-1 intro-topic">다양한 팀원들의 봇</span><span class="cr-1 intro-desc">다양한 팀원들의 디스코드봇들을 확인해보세요!</span><a href="/bots.html" class="cr-0 intro-btn">바로가기</a></div>
+                </section>
+            </div>
+            <div include-html="/components/footer.html"></div>
+    </div>
+    <script>
+      includeHTML()
+    </script>
+    <script src="/status/app.js"></script>
+</body>
+
+</html>
