@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 const config = require('./config.json')
 const port = config.port;
-
+var version = '0.0.1'
 app.use(express.static(__dirname + "/views"));
 app.use(express.static(__dirname + "/public"));
 app.use(function(req, res, next) {
@@ -15,4 +15,5 @@ app.use(function(req, res, next) {
 })
 app.listen(port, () => {
     console.log(`Server Started (PORT ${config.port})`);
+    console.log(`Server Version ${version}`)
 });
