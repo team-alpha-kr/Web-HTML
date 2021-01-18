@@ -1,4 +1,5 @@
 # Team Alpha Main Web
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/5ti3.svg)](https://betteruptime.com/?utm_source=status_badge)
 
 HTML과 Express 기반으로 제작하였습니다.
 
