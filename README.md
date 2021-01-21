@@ -1,4 +1,5 @@
 # Team Alpha Main Web
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/5ti3.svg)](https://betteruptime.com/?utm_source=status_badge)
 
 HTML과 Express 기반으로 제작하였습니다.
 
@@ -16,7 +17,11 @@ HTML과 Express 기반으로 제작하였습니다.
 | Test | Windows Server 2012   | :white_check_mark:                |
 | Test | Windows Server 2019   | :white_check_mark:                |
 
-## 실행방법
+## 실행방법 (우분투 기준)
+0
+```sh
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+```
 1
 ```sh
 $ git clone https://github.com/team-alpha-kr/Web-HTML
@@ -31,8 +36,10 @@ $ npm start
 ```
 
 
-Author(s) : Norhu1130
+Author(s) : Norhu1130, kms0219kms
 
-views,public (C) Team Alpha All rights reserved.
+views, public (C) Team Alpha All rights reserved.
 
-index.js,Core (C) norhu1130 All rights reserved.
+index.js, Core (C) norhu1130 All rights reserved.
+
+term page (C) kms0219kms All rights reserved.
