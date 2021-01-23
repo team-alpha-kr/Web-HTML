@@ -26,6 +26,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('404.html');
 });
+var sslOptions = {
+  ca: fs.readFileSync('cert/ca_bundle.crt'),
+  key: fs.readFileSync('cert/private.key'),
+  cert: fs.readFileSync('cert/certificate.crt')
+};
+https.createServer(sslOptions, app).listen(443, function(){
+  console.log('HTTPS Server Start PORT:' + 443);
+});
 app.listen(port, () => {
     console.log(`Server Started (PORT ${config.port})`);
     console.log(`Server Version ${version}`)
