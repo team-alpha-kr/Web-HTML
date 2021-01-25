@@ -1,32 +1,31 @@
 /*
+EXPRESS SERVER CORE
+해당 express 코드의 저작권은 int가 소유하고 있습니다.
+무단 복제 및 사용을 금합니다.
+
 WEB CORE
 해당 WEB CORE의 저작권은 norhu1130 본인이 소유하고있습니다.
 norhu1130의 허가없이 재배포등을 하실경우 불이익이 생길수 있습니다.
 */
+
 const express = require('express');
 const app = express();
 const config = require('./config.json')
 const port = config.port;
 var engines = require('consolidate');
 const createError = require('http-errors')
-var version = '0.0.1'
-app.engine('html', engines.mustache);
-app.set('view engine', 'html');
-app.use(express.static(__dirname + "/views"));
-app.use(express.static(__dirname + "/public"));
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+let version = '0.0.1'
+const router = require('./router/main')(app);
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('404.html');
-});
-app.listen(port, () => {
-    console.log(`Server Started (PORT ${config.port})`);
-    console.log(`Server Version ${version}`)
-});
+let port = 3000;
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
+app.use('/public', express.static('public'));
+
+let server = app.listen(port, () => {
+  console.log(`Server Started (PORT ${config.port})`);
+  console.log(`Server Version ${version}`)
+})
