@@ -36,7 +36,7 @@ $ npm start
 ```
 
 
-Author(s) : Norhu1130, kms0219kms
+Author(s) : Norhu1130, kms0219kms, chul....
 
 views, public (C) Team Alpha All rights reserved.
 
