@@ -14,7 +14,7 @@ const config = require('./config.json')
 const port = config.port;
 var engines = require('consolidate');
 const createError = require('http-errors')
-let version = '0.0.1'
+let version = '0.0.2'
 const router = require('./router/main')(app);
 
 let port = 3000;

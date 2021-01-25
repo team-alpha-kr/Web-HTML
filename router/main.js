@@ -2,7 +2,25 @@ module.exports = function(app)
 {
     app.get('/', (req, res) => {
         res.render('../views/index.html');
-    })
+    });
+    app.get('/members', (req, res) => {
+        res.render('../views/members.html');
+    });
+    app.get('/about', (req, res) => {
+        res.render('../views/about.html');
+    });
+    app.get('/bots', (req, res) => {
+        res.render('../views/team/join.html');
+    });
+    app.get('/term', (req, res) => {
+        res.render('../views/term.html');
+    });
+    app.get('/privacy', (req, res) => {
+        res.render('../views/privacy.html');
+    });
+    app.get('/discord', (req, res) => {
+        res.render('../views/discord.html');
+    });
     app.use((req, res, next) =>{
         next(createError(404));
     });
