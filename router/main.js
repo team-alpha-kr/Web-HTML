@@ -22,7 +22,7 @@ module.exports = function(app)
         res.render('../views/discord.html');
     });
     app.get('/invite', (req, res) => {
-        res.render('https://discord.gg/YVF2JeWTJS');
+        res.redirect('https://discord.gg/YVF2JeWTJS');
     })
     app.use((req, res, next) =>{
         next(createError(404));
