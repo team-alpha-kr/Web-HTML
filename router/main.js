@@ -19,7 +19,7 @@ router.get('/privacy', (req, res) => {
   res.render('privacy.html')
 })
 router.get('/discord', (req, res) => {
-  res.render('discord.html')
+  res.redirect('https://discord.gg/pVgDwdQ4C6')
 })
 router.get('/invite', (req, res) => {
   res.redirect('https://discord.gg/pVgDwdQ4C6')
@@ -31,17 +31,23 @@ router.get('/team/join', (req, res) => {
   res.render('team/join.html')
 })
 
-router.use((req, res, next) =>{
-  next(createError(404));
-});
+router.get('/errortest', () => {
+  throw new Error('hello world testing')
+})
+
+// 404
+router.use((req, res) => {
+  res.status(404).render('404.html')
+})
+
+// 500 (이외 오류는 라우터에서 res.sendStatus()로 처리)
 router.use((err, req, res, next) => {
-        // set locals, only providing error in development
-        res.locals.message = err.message;
-        res.locals.error = req.app.get('env') === 'development' ? err : {};
-      
-        // render the error page
-        res.status(err.status || 500);
-        res.render('404.html');
-    });
+  // set locals, only providing error in development
+  //res.locals.message = err.message
+  //res.locals.error = req.app.get('env') === 'development' ? err : {}
+
+  if (req.app.get('env') !== 'development') res.sendStatus(500)
+  else res.status(500).end(err.stack)
+})
 
 module.exports = router
