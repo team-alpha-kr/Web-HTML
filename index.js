@@ -2,7 +2,6 @@
 EXPRESS SERVER CORE
 해당 express 코드의 저작권은 chul0721이 소유하고 있습니다.
 무단 복제 및 사용을 금합니다.
-
 WEB CORE
 해당 WEB CORE의 저작권은 norhu1130 본인이 소유하고있습니다.
 norhu1130의 허가없이 재배포등을 하실경우 불이익이 생길수 있습니다.

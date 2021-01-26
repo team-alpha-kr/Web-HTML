@@ -10,7 +10,7 @@ router.get('/about', (req, res) => {
   res.render('about.html')
 })
 router.get('/bots', (req, res) => {
-  res.render('team/join.html')
+  res.render('bots.html')
 })
 router.get('/term', (req, res) => {
   res.render('term.html')
@@ -22,7 +22,13 @@ router.get('/discord', (req, res) => {
   res.render('discord.html')
 })
 router.get('/invite', (req, res) => {
-  res.redirect('https://discord.gg/YVF2JeWTJS')
+  res.redirect('https://discord.gg/pVgDwdQ4C6')
+})
+router.get('/check-id', (req, res) => {
+  res.redirect('https://intotw.tistory.com/73')
+})
+router.get('/team/join', (req, res) => {
+  res.render('team/join.html')
 })
 
 router.use((req, res, next) =>{
