@@ -21,13 +21,20 @@
   <div id="root">
     <div class="App">
         <div>
-            <div include-html="..public/components/navbar.html"></div>
-            <div class="index-full">
-                <span class="index-topic">403 Forbidden</span>
-                <span class="index-desc">이 페이지에 접근 할 권한이 없거나, 비밀번호를 잘못 입력 하셨습니다.<br />다시 한번 확인해 주시기 바랍니다.</span>
-            </div>
+            <div include-html="../public/components/navbar.html"></div>
+            <div class="index-small"><span class="index-topic-small">Team Alpha</span></div>
+<div class="introduce bg-1 cr-0">
+    <div class="container">
+        <div class="left"><span class="cr-1 intro-topic">Team Alpha 이용 약관</span><span class="cr-1 intro-desc">Team Alpha의 이용 약관을 확인해보세요!</span></div>
+        <div class="card-columns">
+            <div class="card bot-card">
+                <div class="card-body"><img class="bot-card-img" src="/static/img/logo.png" alt="Alpha"><span class="card-title bot-card-title">커밍순!</span>
+                    <p class="card-text bot-card-text">아직 열리지 않았네요 :(<br>&nbsp;</p>
+                </div>
+
+</div>
         </div>
-        <div include-html="..public/components/footer.html"></div>
+        <div include-html="../public/components/footer.html"></div>
 </div>
     <script>
       includeHTML()
