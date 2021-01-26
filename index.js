@@ -1,6 +1,6 @@
 /*
 EXPRESS SERVER CORE
-해당 express 코드의 저작권은 int가 소유하고 있습니다.
+해당 express 코드의 저작권은 chul0721이 소유하고 있습니다.
 무단 복제 및 사용을 금합니다.
 
 WEB CORE
