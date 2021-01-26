@@ -15,7 +15,7 @@ const createError = require('http-errors')
 
 const config = require('./config.json')
 const port = config.port || 3000
-const version = '0.0.2'
+const version = '0.0.3'
 
 const router = require('./router/main')
 
