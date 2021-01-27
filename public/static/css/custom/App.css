@@ -1,5 +1,3 @@
-
-    
     .discord.button {
         background-color: #748add !important;
         color: white !important;
@@ -9,8 +7,6 @@
         background-color: #fae100 !important;
         color: #36181f !important;
     }
-
-
 
     .App {
         text-align: center;
@@ -266,6 +262,7 @@
         font-size: 15px;
         border-radius: 20px;
         transition: 0.3s;
+        border: none;
     }
 
     .intro-btn:hover {
@@ -326,6 +323,8 @@
 
     .bot-card-text {
         padding-top: 20px;
+        min-height: 111px;
+        max-height: 111px;
     }
 
     .bot-dividers {

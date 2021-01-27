@@ -12,23 +12,40 @@ router.get('/about', (req, res) => {
 router.get('/bots', (req, res) => {
   res.render('bots.html')
 })
-router.get('/term', (req, res) => {
-  res.render('term.html')
+router.get('/term/', (req, res) => {
+  res.render('term/index.html')
 })
-router.get('/privacy', (req, res) => {
-  res.render('privacy.html')
+router.get('/term/', (req, res) => {
+  res.redirect('/term')
 })
 router.get('/discord', (req, res) => {
-  res.redirect('https://discord.gg/pVgDwdQ4C6')
+  res.render('discord.html')
+})
+router.get('/term/service', (req, res) => {
+  // res.render('term/service.html')
+  res.render('term/preparing.html')
+})
+router.get('/term/tos', (req, res) => {
+  res.render('term/tos.html')
+})
+router.get('/term/privacy', (req, res) => {
+  res.render('term/privacy.html')
 })
 router.get('/invite', (req, res) => {
-  res.redirect('https://discord.gg/pVgDwdQ4C6')
+  res.render('invite.html')
 })
 router.get('/check-id', (req, res) => {
   res.redirect('https://intotw.tistory.com/73')
 })
 router.get('/team/join', (req, res) => {
   res.render('team/join.html')
+})
+router.get('/dashboard', (req, res) => {
+  res.redirect('/dashboard/')
+})
+router.get('/dashboard/', (req, res) => {
+  res.render('dashboard/preparing.html')
+  // res.render('dashboard/index.html')
 })
 
 router.get('/errortest', () => {
@@ -46,8 +63,8 @@ router.use((err, req, res, next) => {
   //res.locals.message = err.message
   //res.locals.error = req.app.get('env') === 'development' ? err : {}
 
-  if (req.app.get('env') !== 'development') res.sendStatus(500)
-  else res.status(500).end(err.stack)
+  if (req.app.get('env') !== 'development') {res.sendStatus(500)}
+  else { res.status(500).end(err.stack) }
 })
 
 module.exports = router
