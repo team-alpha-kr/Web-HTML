@@ -47,6 +47,9 @@ router.get('/dashboard/', (req, res) => {
   res.render('dashboard/preparing.html')
   // res.render('dashboard/index.html')
 })
+router.get('/partner', (req, res) => {
+  res.render('partner.html')
+})
 
 router.get('/errortest', () => {
   throw new Error('hello world testing')
