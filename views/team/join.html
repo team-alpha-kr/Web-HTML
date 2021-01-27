@@ -7,13 +7,13 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="theme-color" content="#000000">
     <meta name="description" content="Team Alpha 공식 사이트">
-    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/font.css">
-    <link rel="stylesheet" href="/static/css/custom/App.css">
-    <script src="/static/js/jquery-3.5.1.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap/bootstrap.min.js"></script>
-    <script src="/static/js/app.js"></script>
+    <link rel="stylesheet" href="/public/static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/static/css/font.css">
+    <link rel="stylesheet" href="/public/static/css/custom/App.css">
+    <script src="/public/static/js/jquery-3.5.1.min.js"></script>
+    <script src="/public/static/js/popper.min.js"></script>
+    <script src="/public/static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/public/static/js/app.js"></script>
     <title>Team Alpha</title>
 </head>
 
@@ -21,10 +21,15 @@
   <div id="root">
     <div class="App">
         <div>
-            <div include-html="../public/components/navbar.html"></div>
-            <div class="index-small"><span class="index-topic-small">Team Alpha</span></div>
+            <div include-html="/public/components/navbar.html"></div>
+            <div class="index-small"><span class="index-topic-small">Team Alpha 팀원 채용</span></div>
+            <div class="introduce bg-1 cr-0">
+              <div class="container">
+                  <div class="left"><span class="cr-1 intro-topic">Team Alpha의 팀원 채용 소식</span><span class="cr-1 intro-desc">Team Alpha에 일원이 되고 싶으신가요? 아래에서 채용 소식을 확인하시고, 팀원 신청을 하셔서 팀원이 되어 보세요!</span></div>
+                  <iframe src="/public/api/teamjoin.html" width="100%" height="650vh" scrolling="no" frameborder="0"></iframe>
+                </div>
         </div>
-        <div include-html="../public/components/footer.html"></div>
+        <div include-html="/public/components/footer.html"></div>
 </div>
     <script>
       includeHTML()
