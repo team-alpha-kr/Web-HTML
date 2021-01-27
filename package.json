@@ -1,9 +1,9 @@
 {
   "name": "TeamAlphaWeb",
-  "version": "1.0.0",
+  "version": "0.0.4",
   "main": "index.js",
   "repository": "https://github.com/team-alpha-kr/Web-HTML.git",
-  "author": "All PGS <kms0219kms@naver.com>",
+  "author": "",
   "license": "MIT",
   "scripts": {
     "start": "node .",
