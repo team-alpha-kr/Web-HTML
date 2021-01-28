@@ -17,6 +17,8 @@ kms0219kms의 허가 없이 무단 복제 및 사용을 금합니다.
 
 const express = require('express')
 const app = express()
+var https = require('https'); //http 모듈 대신 https 모듈을 사용합니다.
+var fs = require('fs');
 
 const engines = require('consolidate')
 const createError = require('http-errors')
@@ -35,29 +37,20 @@ app.use('/public', express.static('public'))
 
 app.use(router)
 
-app.listen(port, () => {
-  console.log(`Server Started (PORT ${config.port})`)
-  console.log(`Server Version ${version}`)
-})
+var sslOptions = {
+  //1. PEM을 사용하여 인증하는 경우(cert, ca, key파일을 사용하여 인증하는 경우)
+  //확장자명이 .pem인 경우도 있습니다.
+  ca: fs.readFileSync('ca체인 루트/CA파일.crt'),
+  key: fs.readFileSync('키 파일 루트/키파일.key'),
+  cert: fs.readFileSync('인증서 경로/인증서 이름.crt'),
+};
 
-// HTTPS 서버
-option
-  ? https.createServer(option, app).listen(PORT, () => {
-      console.log(`Server is running at port ${PORT}`);
-    })
-  : undefined;
+/*
+//이 부분에 router등 설정을 해주면 됩니다.
+*/
 
-// HTTPS 서버로 요청을 전달하여 자동으로 SSL 연결을 해주는 HTTP 서버
-// SSL option 이 존재하지 않는 development 단계에서는 그냥 HTTP 서버만이 존재하게 됩니다.
-option
-  ? http
-      .createServer(function(req, res) {
-        res.writeHead(301, {
-          Location: "https://" + req.headers["host"] + req.url
-        });
-        res.end();
-      })
-      .listen(80)
-  : http.createServer(app).listen(PORT, () => {
-      console.log(`Server is running at port ${PORT}`);
-    });
+https.createServer(sslOptions, server, (req, res) => {
+  console.log('필요한 코드 넣기');
+}).listen(443, () => {
+  console.log('서버 포트: 443 ...');
+});
