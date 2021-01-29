@@ -17,6 +17,8 @@ kms0219kms의 허가 없이 무단 복제 및 사용을 금합니다.
 
 const express = require('express')
 const app = express()
+var https = require('https'); //http 모듈 대신 https 모듈을 사용합니다.
+var fs = require('fs');
 
 const engines = require('consolidate')
 const createError = require('http-errors')
@@ -35,7 +37,20 @@ app.use('/public', express.static('public'))
 
 app.use(router)
 
-app.listen(port, () => {
-  console.log(`Server Started (PORT ${config.port})`)
-  console.log(`Server Version ${version}`)
-})
+var sslOptions = {
+  //1. PEM을 사용하여 인증하는 경우(cert, ca, key파일을 사용하여 인증하는 경우)
+  //확장자명이 .pem인 경우도 있습니다.
+  ca: fs.readFileSync('./ca_bundle.crt'),
+  key: fs.readFileSync('./private.key'),
+  cert: fs.readFileSync('./certificate.crt'),
+};
+
+/*
+//이 부분에 router등 설정을 해주면 됩니다.
+*/
+
+https.createServer(sslOptions, server, (req, res) => {
+  console.log('필요한 코드 넣기');
+}).listen(443, () => {
+  console.log('서버 포트: 443 ...');
+});
