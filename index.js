@@ -17,13 +17,7 @@ kms0219kms의 허가 없이 무단 복제 및 사용을 금합니다.
 
 const express = require('express')
 const app = express()
-
-const engines = require('consolidate')
-const createError = require('http-errors')
-
-const config = require('./config.json')
-const port = config.port || 3000
-const version = require('./package.json').version
+var { query_run } = require("./mysql_node")
 
 const router = require('./router/main')
 
@@ -35,7 +29,7 @@ app.use('/public', express.static('public'))
 
 app.use(router)
 
-app.listen(port, () => {
-  console.log(`Server Started (PORT ${config.port})`)
-  console.log(`Server Version ${version}`)
+app.listen(80, () => {
 })
+
+//query_run("INSERT INTO Data VALUES (1);")
