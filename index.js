@@ -49,8 +49,22 @@ var sslOptions = {
 //이 부분에 router등 설정을 해주면 됩니다.
 */
 
-https.createServer(sslOptions, server, (req, res) => {
+https.createServer(sslOptions, app, (req, res) => {
   console.log('필요한 코드 넣기');
 }).listen(443, () => {
   console.log('서버 포트: 443 ...');
 });
+
+// set up plain http server
+var http = express();
+
+// set up a route to redirect http to https
+http.get('*', function(req, res) {  
+    res.redirect('https://' + req.headers.host + req.url);
+
+    // Or, if you don't want to automatically detect the domain name from the request header, you can hard code it:
+    // res.redirect('https://example.com' + req.url);
+})
+
+// have it listen on 8080
+http.listen(80);
