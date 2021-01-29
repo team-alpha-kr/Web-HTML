@@ -17,8 +17,8 @@ kms0219kms의 허가 없이 무단 복제 및 사용을 금합니다.
 
 const express = require('express')
 const app = express()
-var https = require('https'); //http 모듈 대신 https 모듈을 사용합니다.
-var fs = require('fs');
+const https = require('https') //http 모듈 대신 https 모듈을 사용합니다.
+const fs = require('fs')
 
 const engines = require('consolidate')
 const createError = require('http-errors')
@@ -37,34 +37,45 @@ app.use('/public', express.static('public'))
 
 app.use(router)
 
-var sslOptions = {
-  //1. PEM을 사용하여 인증하는 경우(cert, ca, key파일을 사용하여 인증하는 경우)
+const httpPort = config.web.port || 80
+if (process.env.NODE_ENV === 'production') {
+  // 프로덕션 환경일 경우 https 서버로 실행합니다
+  const sslOptions = {
+    //1. PEM을 사용하여 인증하는 경우(cert, ca, key파일을 사용하여 인증하는 경우)
   //확장자명이 .pem인 경우도 있습니다.
-  ca: fs.readFileSync('./ca_bundle.crt'),
-  key: fs.readFileSync('./private.key'),
-  cert: fs.readFileSync('./certificate.crt'),
-};
+    ca: fs.readFileSync('./ca_bundle.crt'),
+    key: fs.readFileSync('./private.key'),
+    cert: fs.readFileSync('./certificate.crt'),
+  }
 
 /*
 //이 부분에 router등 설정을 해주면 됩니다.
 */
 
-https.createServer(sslOptions, app, (req, res) => {
-  console.log('필요한 코드 넣기');
-}).listen(443, () => {
-  console.log('서버 포트: 443 ...');
-});
+  const httpsPort = config.web.ssl_port || 443
+  https.createServer(sslOptions, app, (req, res) => {
+    //console.log('필요한 코드 넣기');
+  }).listen(httpsPort, () => {
+    console.log('https 서버 포트: ' + httpsPort);
+  });
 
-// set up plain http server
-var http = express();
+  // set up plain http server
+  const httpRedirecter = express()
 
-// set up a route to redirect http to https
-http.get('*', function(req, res) {  
-    res.redirect('https://' + req.headers.host + req.url);
+  // set up a route to redirect http to https
+  httpRedirecter.get('*', (req, res) => {  
+    res.redirect('https://' + req.headers.host + req.url)
 
     // Or, if you don't want to automatically detect the domain name from the request header, you can hard code it:
     // res.redirect('https://example.com' + req.url);
-})
+  })
 
-// have it listen on 8080
-http.listen(80);
+  httpRedirecter.listen(httpPort, () => {
+    console.log(`port: ${httpPort}`)
+  })
+} else {
+  // 개발모드에서는 http 서버만 작동합니다
+  app.listen(httpPort, () => {
+    console.log(`=== DEVELOPMENT MODE ===\nport: ${httpPort}`)
+  })
+}
