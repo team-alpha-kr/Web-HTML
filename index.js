@@ -40,9 +40,9 @@ app.use(router)
 var sslOptions = {
   //1. PEM을 사용하여 인증하는 경우(cert, ca, key파일을 사용하여 인증하는 경우)
   //확장자명이 .pem인 경우도 있습니다.
-  ca: fs.readFileSync('ca체인 루트/CA파일.crt'),
-  key: fs.readFileSync('키 파일 루트/키파일.key'),
-  cert: fs.readFileSync('인증서 경로/인증서 이름.crt'),
+  ca: fs.readFileSync('./ca_bundle.crt'),
+  key: fs.readFileSync('./private.key'),
+  cert: fs.readFileSync('./certificate.crt'),
 };
 
 /*
