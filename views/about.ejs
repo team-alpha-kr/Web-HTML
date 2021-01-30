@@ -21,10 +21,10 @@
   <div id="root">
     <div class="App">
         <div>
-            <div include-html="/public/components/navbar.html"></div>
+            <%- include('../public/components/navbar.ejs') %>
             <div class="index-full"><span class="index-topic">Team Alpha</span><span class="index-desc">우리는 세상을 만듭니다.</span></div>
         </div>
-        <div include-html="/public/components/footer.html"></div>
+        <%- include('../public/components/footer.ejs') %>
 </div>
     <script>
       includeHTML()

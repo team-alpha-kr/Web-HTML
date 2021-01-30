@@ -21,7 +21,7 @@
   <div id="root">
     <div class="App">
         <div>
-            <div include-html="/public/components/navbar.html"></div>
+            <%- include('../public/components/navbar.ejs') %>
             <div class="index-small"><span class="index-topic-small">Team Alpha 봇 소개</span></div>
 <div class="introduce bg-1 cr-0">
     <div class="container">
@@ -96,7 +96,7 @@
     </div>
 </div>
         </div>
-        <div include-html="/public/components/footer.html"></div>
+        <%- include('../public/components/footer.ejs') %>
 </div>
     <script>
       includeHTML()

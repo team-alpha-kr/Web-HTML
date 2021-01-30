@@ -21,13 +21,13 @@
   <div id="root">
     <div class="App">
         <div>
-            <div include-html="/public/components/navbar.html"></div>
+            <%- include('../../public/components/navbar.ejs') %>
             <div class="index-full">
                 <span class="index-topic">Comming Soon!</span>
                 <span class="index-desc">이용에 불편을 드려 죄송합니다.<br>아직 준비되지 않았습니다! 다음에 다시 시도해 주세요.</span>
             </div>
         </div>
-        <div include-html="/public/components/footer.html"></div>
+        <%- include('../../public/components/footer.ejs') %>
 </div>
     <script>
       includeHTML()
