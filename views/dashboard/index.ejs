@@ -21,14 +21,14 @@
     <div id="root">
         <div class="App">
             <div>
-                <div include-html="/components/navbar.html"></div>
+                <%- include('../../public/components/navbar.ejs') %>
                 <div class="index"><span class="index-topic">Team Alpha</span><span class="index-desc">대시보드</span></div>
             </div>
-            <div include-html="/components/footer.html"></div>
+            <%- include('../../public/components/footer.ejs') %>
     </div>
-    <script>
+    <!-- <script>
       includeHTML()
-    </script>
+    </script> -->
     <script src="/status/app.js"></script>
 </body>
 

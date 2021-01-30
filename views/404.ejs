@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="naver-site-verification" content="daefca3a44f1b7ee89c8cbcfcb73715ec7060547" />
+    <link rel="icon" href="/favicon.ico">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Team Alpha 공식 사이트">
+    <link rel="stylesheet" href="/public/static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/static/css/font.css">
+    <link rel="stylesheet" href="/public/static/css/custom/App.css">
+    <script src="/public/static/js/jquery-3.5.1.min.js"></script>
+    <script src="/public/static/js/popper.min.js"></script>
+    <script src="/public/static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/public/static/js/app.js"></script>
+    <title>Team Alpha</title>
+</head>
+
+<body>
+  <div id="root">
+    <div class="App">
+        <div>
+            <%- include('../public/components/navbar.ejs') %>
+            <div class="index-full">
+                <span class="index-topic">404 Not Found</span>
+                <span class="index-desc">파일이 삭제되었거나 주소가 잘못 되어 있을 수 있습니다.<br />다시 한번 확인해 주시기 바랍니다.</span>
+            </div>
+        </div>
+        <%- include('../public/components/footer.ejs') %>
+</div>
+    <script>
+      includeHTML()
+    </script>
+</body>
+</html>

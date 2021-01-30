@@ -20,24 +20,18 @@ const app = express()
 const https = require('https') //http 모듈 대신 https 모듈을 사용합니다.
 const fs = require('fs')
 
-const engines = require('consolidate')
 const createError = require('http-errors')
-
-const config = require('./config.json')
-const port = config.port || 3000
-const version = require('./package.json').version
 
 const router = require('./router/main')
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
-app.engine('html', require('ejs').renderFile)
 
 app.use('/public', express.static('public'))
 
 app.use(router)
 
-const httpPort = config.web.port || 80
+const httpPort = 80
 if (process.env.NODE_ENV === 'production') {
   // 프로덕션 환경일 경우 https 서버로 실행합니다
   const sslOptions = {
@@ -52,30 +46,31 @@ if (process.env.NODE_ENV === 'production') {
 //이 부분에 router등 설정을 해주면 됩니다.
 */
 
-  const httpsPort = config.web.ssl_port || 443
-  https.createServer(sslOptions, app, (req, res) => {
-    //console.log('필요한 코드 넣기');
-  }).listen(httpsPort, () => {
-    console.log('https 서버 포트: ' + httpsPort);
-  });
+const httpsPort =  443
+https.createServer(sslOptions, app, (req, res) => {
+  //console.log('필요한 코드 넣기');
+}).listen(httpsPort, () => {
+  console.log('https 서버 포트: ' + httpsPort);
+});
 
-  // set up plain http server
-  const httpRedirecter = express()
+// set up plain http server
+const httpRedirecter = express()
 
-  // set up a route to redirect http to https
-  httpRedirecter.get('*', (req, res) => {  
-    res.redirect('https://' + req.headers.host + req.url)
+// set up a route to redirect http to https
+httpRedirecter.get('*', (req, res) => {  
+  res.redirect('https://' + req.headers.host + req.url)
 
-    // Or, if you don't want to automatically detect the domain name from the request header, you can hard code it:
-    // res.redirect('https://example.com' + req.url);
-  })
+  // Or, if you don't want to automatically detect the domain name from the request header, you can hard code it:
+  // res.redirect('https://example.com' + req.url);
+})
 
-  httpRedirecter.listen(httpPort, () => {
-    console.log(`port: ${httpPort}`)
-  })
+httpRedirecter.listen(httpPort, () => {
+  console.log(`port: ${httpPort}`)
+})
+
 } else {
   // 개발모드에서는 http 서버만 작동합니다
-  app.listen(httpPort, () => {
+  app.listen(80, () => {
     console.log(`=== DEVELOPMENT MODE ===\nport: ${httpPort}`)
   })
 }

@@ -21,13 +21,15 @@
   <div id="root">
     <div class="App">
         <div>
-            <div include-html="/public/components/navbar.html"></div>
-            <div class="index-full">
-                <span class="index-topic">Comming Soon!</span>
-                <span class="index-desc">이용에 불편을 드려 죄송합니다.<br>아직 준비되지 않았습니다! 다음에 다시 시도해 주세요.</span>
-            </div>
+            <%- include('../public/components/navbar.ejs') %>
+            <div class="index-small"><span class="index-topic-small">Team Alpha 파트너 신청</span></div>
+            <div class="introduce bg-1 cr-0">
+              <div class="container">
+                  <div class="left"><span class="cr-1 intro-topic">Team Alpha 파트너 신청</span><span class="cr-1 intro-desc">Team Alpha의 파트너가 되고 싶으신가요? 아래에서 파트너 신청을 하셔서 파트너가 되어 보세요!</span></div>
+                  <iframe src="/public/api/partner.html" width="100%" height="650vh" scrolling="auto" frameborder="0"></iframe>
+                </div>
         </div>
-        <div include-html="/public/components/footer.html"></div>
+        <%- include('../public/components/footer.ejs') %>
 </div>
     <script>
       includeHTML()

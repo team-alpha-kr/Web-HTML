@@ -1,54 +1,50 @@
 const router = require('express').Router()
 
 router.get('/', (req, res) => {
-  res.render('index.html')
+  res.render('index')
 })
 router.get('/members', (req, res) => {
-  res.render('members.html')
+  res.render('members')
 });
 router.get('/about', (req, res) => {
-  res.render('about.html')
+  res.render('about')
 })
 router.get('/bots', (req, res) => {
-  res.render('bots.html')
+  res.render('bots')
 })
 router.get('/term/', (req, res) => {
-  res.render('term/index.html')
+  res.render('term/index')
 })
-router.get('/term/', (req, res) => {
-  res.redirect('/term')
-})
+
 router.get('/discord', (req, res) => {
-  res.render('discord.html')
+  res.render('discord')
 })
 router.get('/term/service', (req, res) => {
   // res.render('term/service.html')
-  res.render('term/preparing.html')
+  res.render('term/preparing')
 })
 router.get('/term/tos', (req, res) => {
-  res.render('term/tos.html')
+  res.render('term/tos')
 })
 router.get('/term/privacy', (req, res) => {
-  res.render('term/privacy.html')
+  res.render('term/privacy')
 })
 router.get('/invite', (req, res) => {
-  res.render('invite.html')
+  res.render('invite')
 })
 router.get('/check-id', (req, res) => {
   res.redirect('https://intotw.tistory.com/73')
 })
 router.get('/team/join', (req, res) => {
-  res.render('team/join.html')
+  res.render('team/join')
 })
-router.get('/dashboard', (req, res) => {
-  res.redirect('/dashboard/')
-})
+
 router.get('/dashboard/', (req, res) => {
-  res.render('dashboard/preparing.html')
-  // res.render('dashboard/index.html')
+  //res.render('dashboard/preparing')
+   res.render('dashboard/index')
 })
 router.get('/partner', (req, res) => {
-  res.render('partner.html')
+  res.render('partner')
 })
 
 router.get('/errortest', () => {
