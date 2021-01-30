@@ -15,9 +15,7 @@ router.get('/bots', (req, res) => {
 router.get('/term/', (req, res) => {
   res.render('term/index')
 })
-router.get('/term/', (req, res) => {
-  res.redirect('/term')
-})
+
 router.get('/discord', (req, res) => {
   res.render('discord')
 })
@@ -40,12 +38,10 @@ router.get('/check-id', (req, res) => {
 router.get('/team/join', (req, res) => {
   res.render('team/join')
 })
-router.get('/dashboard', (req, res) => {
-  res.redirect('/dashboard/')
-})
+
 router.get('/dashboard/', (req, res) => {
-  res.render('dashboard/preparing')
-  // res.render('dashboard/index.html')
+  //res.render('dashboard/preparing')
+   res.render('dashboard/index')
 })
 router.get('/partner', (req, res) => {
   res.render('partner')
