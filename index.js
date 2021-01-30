@@ -20,7 +20,6 @@ const app = express()
 const https = require('https') //http 모듈 대신 https 모듈을 사용합니다.
 const fs = require('fs')
 
-const engines = require('consolidate')
 const createError = require('http-errors')
 
 const config = require('./config.json')
@@ -31,7 +30,6 @@ const router = require('./router/main')
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
-app.engine('html', require('ejs').renderFile)
 
 app.use('/public', express.static('public'))
 
