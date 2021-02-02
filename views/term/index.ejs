@@ -21,33 +21,45 @@
   <div id="root">
     <div class="App">
         <div>
-            <%- include('../../public/components/navbar.ejs') %>
+            <%- include('../components/navbar.ejs') %>
             <div class="index-small"><span class="index-topic-small">Team Alpha</span></div>
-<div class="introduce bg-1 cr-0">
-    <div class="container">
-        <div class="left"><span class="cr-1 intro-topic">Team Alpha 이용 약관</span><span class="cr-1 intro-desc">Team Alpha의 이용 약관을 확인해보세요!</span></div>
-        <div class="card-columns">
-            <div class="card bot-card">
-                <div class="card-body"><img class="bot-card-img" src="/public/static/img/logo.png" alt="Alpha"><span class="card-title bot-card-title" style="font-size: 17px;">디스코드 이용약관</span>
-                    <p class="card-text bot-card-text">Team Alpha 공식 디스코드 이용약관을 확인해보세요!</p>
-                    <hr class="rounded bot-dividers"><a href="./term/tos" class="bot-button btn btn-info">확인</a>
+            <div class="introduce bg-1 cr-0">
+                <div class="container">
+                    <div class="left"><span class="cr-1 intro-topic">Team Alpha 이용 약관</span><span class="cr-1 intro-desc">Team Alpha의 이용 약관을 확인해보세요!</span></div>
+                    <div class="card-columns">
+                        <div class="card bot-card">
+                            <div class="card-body"><img class="bot-card-img" src="/public/static/img/logo.png" alt="Alpha"><span class="card-title bot-card-title" style="font-size: 17px;">디스코드 이용약관</span>
+                                <p class="card-text bot-card-text">Team Alpha 공식 디스코드 이용약관을 확인해보세요!</p>
+                                <hr class="rounded bot-dividers"><a href="./term/tos" class="bot-button btn btn-info">확인</a>
+                            </div>
+                        </div>
+                        <div class="card bot-card">
+                            <div class="card-body"><img class="bot-card-img" src="/public/static/img/logo.png" alt="Alpha"><span class="card-title bot-card-title" style="font-size: 15px;">소속 서비스 이용약관</span>
+                                <p class="card-text bot-card-text">Team Alpha 소속 봇 및 Team Alpha 가 제공하는 서비스의 이용약관을 확인해보세요!</p>
+                                <hr class="rounded bot-dividers"><a href="./term/service" class="bot-button btn btn-info">확인</a>
+                            </div>
+                        </div>
+                        <div class="card bot-card">
+                            <div class="card-body"><img class="bot-card-img" src="/public/static/img/logo.png" alt="Alpha"><span class="card-title bot-card-title" style="font-size: 17px;">개인정보처리방침</span>
+                                <p class="card-text bot-card-text">여러분의 개인정보는 소중하니까~ Team Alpha의 개인정보 처리방침을 확인해보세요!</p>
+                                <hr class="rounded bot-dividers"><a href="./term/privacy" class="bot-button btn btn-info">확인</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card bot-card">
-                <div class="card-body"><img class="bot-card-img" src="/public/static/img/logo.png" alt="Alpha"><span class="card-title bot-card-title" style="font-size: 15px;">소속 서비스 이용약관</span>
-                    <p class="card-text bot-card-text">Team Alpha 소속 봇 및 Team Alpha 가 제공하는 서비스의 이용약관을 확인해보세요!</p>
-                    <hr class="rounded bot-dividers"><a href="./term/service" class="bot-button btn btn-info">확인</a>
-                </div>
-            </div>
-            <div class="card bot-card">
-                <div class="card-body"><img class="bot-card-img" src="/public/static/img/logo.png" alt="Alpha"><span class="card-title bot-card-title" style="font-size: 17px;">개인정보처리방침</span>
-                    <p class="card-text bot-card-text">여러분의 개인정보는 소중하니까~ Team Alpha의 개인정보 처리방침을 확인해보세요!</p>
-                    <hr class="rounded bot-dividers"><a href="./term/privacy" class="bot-button btn btn-info">확인</a>
-                </div>
-            </div>
-    
-</div></div>
         </div>
-        <%- include('../../public/components/footer.ejs') %>
+        <%- include('../components/footer.ejs') %>
+    </div>
+  </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HLCN2VQE2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2HLCN2VQE2');
+  </script>
 </body>
 </html>

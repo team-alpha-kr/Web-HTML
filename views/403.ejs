@@ -21,13 +21,23 @@
   <div id="root">
     <div class="App">
         <div>
-            <%- include('../public/components/navbar.ejs') %>
+            <%- include('./components/navbar.ejs') %>
             <div class="index-full">
                 <span class="index-topic">403 Forbidden</span>
                 <span class="index-desc">이 페이지에 접근 할 권한이 없거나, 비밀번호를 잘못 입력 하셨습니다.<br />다시 한번 확인해 주시기 바랍니다.</span>
             </div>
         </div>
-        <%- include('../public/components/footer.ejs') %>
-</div>
+        <%- include('./components/footer.ejs') %>
+    </div>
+  </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HLCN2VQE2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2HLCN2VQE2');
+  </script>
 </body>
 </html>

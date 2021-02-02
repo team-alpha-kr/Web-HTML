@@ -1,3 +1,7 @@
+// Team Alpha Policy Custom Javascript
+// Copyright 2020 Team Alpha
+// Create: 2020. 1. 31. PM 5:10
+
 (function(){
 
   var frame = document.createElement('iframe');

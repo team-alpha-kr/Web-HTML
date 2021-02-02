@@ -20,18 +20,20 @@ const app = express()
 const https = require('https') //http 모듈 대신 https 모듈을 사용합니다.
 const fs = require('fs')
 
-const createError = require('http-errors')
-
 const router = require('./router/main')
+
+const config = require('./config.json')
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
 app.use('/public', express.static('public'))
+app.use('/views/api', express.static('public'))
 
 app.use(router)
 
-const httpPort = 80
+const httpPort = config.web.port
+const nginxPort = config.web.nginx_port
 if (process.env.NODE_ENV === 'production') {
   // 프로덕션 환경일 경우 https 서버로 실행합니다
   const sslOptions = {
@@ -46,7 +48,7 @@ if (process.env.NODE_ENV === 'production') {
 //이 부분에 router등 설정을 해주면 됩니다.
 */
 
-const httpsPort =  443
+const httpsPort = config.web.ssl_port
 https.createServer(sslOptions, app, (req, res) => {
   //console.log('필요한 코드 넣기');
 }).listen(httpsPort, () => {
@@ -68,9 +70,19 @@ httpRedirecter.listen(httpPort, () => {
   console.log(`port: ${httpPort}`)
 })
 
+} else if (process.env.NODE_ENV === 'cloudflare') {
+  // 클플 보호모드+nginx에서는 리다이렉트 오류 방지를 위해 http 서버만 작동합니다
+  app.listen(nginxPort, () => {
+    console.log(`=== CLOUDFLARE MODE ===\nport: ${nginxPort}`)
+  })
+} else if (process.env.NODE_ENV === 'nginx_develop') {
+  // 클플 보호모드+nginx+개발모드에서는 리다이렉트 오류 방지를 위해 http 서버만 작동합니다
+  app.listen(nginxPort, () => {
+    console.log(`=== NGINX+DEVELOPMENT MODE ===\nport: ${nginxPort}`)
+  })
 } else {
   // 개발모드에서는 http 서버만 작동합니다
-  app.listen(80, () => {
+  app.listen(httpPort, () => {
     console.log(`=== DEVELOPMENT MODE ===\nport: ${httpPort}`)
   })
 }

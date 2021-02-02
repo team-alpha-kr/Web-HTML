@@ -21,7 +21,7 @@
     <div id="root">
         <div class="App">
             <div>
-                <%- include('../public/components/navbar.ejs') %>
+                <%- include('./components/navbar.ejs') %>
                 <div class="index"><span class="index-topic">Team Alpha</span><span class="index-desc">공식 사이트</span><a href="/about" class="index-button">소개 보기</a></div>
                 <section class="introduce bg-1">
                     <div class="container right"><span class="cr-1 intro-topic">대시보드</span><span class="cr-1 intro-desc">대시보드를 확인해 많은 정보를 볼 수 있습니다.</span><button class="cr-1 intro-btn disable">(준비 중)</button></div>
@@ -33,8 +33,17 @@
                     <div class="container right"><span class="cr-1 intro-topic">다양한 팀원들의 봇</span><span class="cr-1 intro-desc">다양한 팀원들의 디스코드봇들을 확인해보세요!</span><a href="/bots" class="cr-0 intro-btn">바로가기</a></div>
                 </section>
             </div>
-            <%- include('../public/components/footer.ejs') %>
+            <%- include('./components/footer.ejs') %>
+        </div>
     </div>
-</body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HLCN2VQE2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-2HLCN2VQE2');
+    </script>
+</body>
 </html>

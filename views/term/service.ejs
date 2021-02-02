@@ -21,7 +21,7 @@
   <div id="root">
     <div class="App">
         <div>
-            <%- include('../../public/components/navbar.ejs') %>
+            <%- include('/public/components/navbar.ejs') %>
             <div class="index-small"><span class="index-topic-small">Team Alpha</span></div>
 <div class="introduce bg-1 cr-0">
     <div class="container">
@@ -101,7 +101,16 @@
     </div>
 </div>
         </div>
-        <%- include('../../public/components/footer.ejs') %>
+        <%- include('/public/components/footer.ejs') %>
 </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HLCN2VQE2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-2HLCN2VQE2');
+</script>
 </body>
 </html>

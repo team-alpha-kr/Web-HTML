@@ -3,6 +3,12 @@ const router = require('express').Router()
 router.get('/', (req, res) => {
   res.render('index')
 })
+router.get('/preparing', (req, res) => {
+  res.render('preparing')
+})
+router.get('/preparing/nc', (req, res) => {
+  res.render('preparing_nc')
+})
 router.get('/members', (req, res) => {
   res.render('members')
 });
@@ -15,13 +21,12 @@ router.get('/bots', (req, res) => {
 router.get('/term/', (req, res) => {
   res.render('term/index')
 })
-
 router.get('/discord', (req, res) => {
   res.render('discord')
 })
 router.get('/term/service', (req, res) => {
   // res.render('term/service.html')
-  res.render('term/preparing')
+  res.redirect('preparing')
 })
 router.get('/term/tos', (req, res) => {
   res.render('term/tos')
@@ -38,22 +43,20 @@ router.get('/check-id', (req, res) => {
 router.get('/team/join', (req, res) => {
   res.render('team/join')
 })
-
 router.get('/dashboard/', (req, res) => {
-  //res.render('dashboard/preparing')
-   res.render('dashboard/index')
+  res.redirect('preparing')
+  // res.render('dashboard/index')
 })
 router.get('/partner', (req, res) => {
   res.render('partner')
 })
-
 router.get('/errortest', () => {
   throw new Error('hello world testing')
 })
 
 // 404
 router.use((req, res) => {
-  res.status(404).render('404.html')
+  res.status(404).render('404')
 })
 
 // 500 (이외 오류는 라우터에서 res.sendStatus()로 처리)

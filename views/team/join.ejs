@@ -21,15 +21,26 @@
   <div id="root">
     <div class="App">
         <div>
-            <%- include('../../public/components/navbar.ejs') %>
+            <%- include('../components/navbar.ejs') %>
             <div class="index-small"><span class="index-topic-small">Team Alpha 팀원 채용</span></div>
             <div class="introduce bg-1 cr-0">
               <div class="container">
                   <div class="left"><span class="cr-1 intro-topic">Team Alpha의 팀원 채용 소식</span><span class="cr-1 intro-desc">Team Alpha에 일원이 되고 싶으신가요? 아래에서 채용 소식을 확인하시고, 팀원 신청을 하셔서 팀원이 되어 보세요!<br>아래 페이지가 아직 개발중인가요? <a href = "https://temporary.alphakr.xyz/recruit">여기</a>에서 임시로 채용공고를 확인하세요!</span></div>
-                  <iframe src="/public/api/teamjoin.html" width="100%" height="650vh" scrolling="no" frameborder="0"></iframe>
-                </div>
+                  <iframe src="/preparing/nc" width="100%" height="650vh" scrolling="no" frameborder="0"></iframe>
+              </div>
+            </div>
         </div>
-        <%- include('../../public/components/footer.ejs') %>
-</div>
+        <%- include('../components/footer.ejs') %>
+    </div>
+  </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HLCN2VQE2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2HLCN2VQE2');
+  </script>
 </body>
 </html>

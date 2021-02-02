@@ -1,5 +1,5 @@
-// SW Project Custom Javascript
-// Copyright 2020 SW Project
+// Team Alpha Policy Custom Javascript
+// Copyright 2020 Team Alpha
 // Create: 2020. 12. 27. PM 5:25
 
 function includeHTML() {
@@ -28,28 +28,4 @@ function includeHTML() {
             return;
         }
     }
-}
-
-function join() {
-    location.replace('https://discord.gg/GtZdSDPktT');
-}
-
-function cast() {
-    location.replace('https://discord.gg/pzBAHJw');
-}
-
-function shop() {
-    location.replace('https://discord.gg/Q5bvC3CfpR');
-}
-
-function old() {
-    location.replace('https://swp.creatorlink.net/Main');
-}
-
-function old2() {
-    location.replace('https://swporject.netlify.app/');
-}
-
-function news() {
-    location.replace('http://bbs.swproject.cf/news');
 }

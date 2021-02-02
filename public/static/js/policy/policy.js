@@ -1,5 +1,5 @@
-// SW Project Custom Javascript
-// Copyright 2020 SW Project
+// Team Alpha Policy Custom Javascript
+// Copyright 2020 Team Alpha
 // Create: 2020. 12. 27. PM 5:40
 
 function getParam(key) {
