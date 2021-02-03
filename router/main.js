@@ -24,9 +24,12 @@ router.get('/term/', (req, res) => {
 router.get('/discord', (req, res) => {
   res.render('discord')
 })
+router.get('/board', (req, res) => {
+  res.redirect('https://bbs.alphakr.xyz', 301)
+})
 router.get('/term/service', (req, res) => {
   // res.render('term/service.html')
-  res.redirect('preparing')
+  res.redirect('preparing', 302)
 })
 router.get('/term/tos', (req, res) => {
   res.render('term/tos')
@@ -38,21 +41,22 @@ router.get('/invite', (req, res) => {
   res.render('invite')
 })
 router.get('/check-id', (req, res) => {
-  res.redirect('https://intotw.tistory.com/73')
+  res.redirect('https://intotw.tistory.com/73', 301)
 })
 router.get('/team/join', (req, res) => {
-  res.render('team/join')
+  // res.redirect('preparing', 302)
+  res.redirect('https://bbs.alphakr.xyz/recruit', 301)
 })
 router.get('/dashboard/', (req, res) => {
-  res.redirect('preparing')
+  res.redirect('preparing', 302)
   // res.render('dashboard/index')
 })
 router.get('/partner', (req, res) => {
-  res.redirect('https://partner.alphakr.xyz')
+  res.redirect('https://partner.alphakr.xyz', 301)
   // res.render('preparing')
 })
 router.get('/blog', (req, res) => {
-  res.redirect('https://blog.alphakr.xyz')
+  res.redirect('https://blog.alphakr.xyz', 301)
   // res.render('preparing')
 })
 router.get('/errortest', () => {
