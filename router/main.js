@@ -48,7 +48,12 @@ router.get('/dashboard/', (req, res) => {
   // res.render('dashboard/index')
 })
 router.get('/partner', (req, res) => {
-  res.render('partner')
+  res.redirect('https://partner.alphakr.xyz')
+  // res.render('preparing')
+})
+router.get('/blog', (req, res) => {
+  res.redirect('https://blog.alphakr.xyz')
+  // res.render('preparing')
 })
 router.get('/errortest', () => {
   throw new Error('hello world testing')
