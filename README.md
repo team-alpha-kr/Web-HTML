@@ -87,7 +87,7 @@ $ npm start
 ```
 
 
-Author(s) : Norhu1130, kms0219kms, chul....
+Author(s) : Norhu1130, kms0219kms, chul0721
 
 views, public (C) kms0219kms(Licensed: Team Alpha) All rights reserved.
 
