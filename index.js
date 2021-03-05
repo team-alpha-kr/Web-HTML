@@ -36,7 +36,7 @@ const httpPort = config.web.port
 
 if (config.env.NODE_ENV === 'replit') {
   // repl 환경에서는 오류 방지를 위해 http 서버만 작동합니다
-  app.listen(nginxPort, () => {
+  app.listen(httpPort, () => {
     console.log(`=== Repl.it MODE ===\nport: ${httpPort}`)
   })
 } else {
