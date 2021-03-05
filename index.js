@@ -33,52 +33,11 @@ app.use('/views/api', express.static('public'))
 app.use(router)
 
 const httpPort = config.web.port
-const nginxPort = config.web.nginx_port
-if (process.env.NODE_ENV === 'production') {
-  // 프로덕션 환경일 경우 https 서버로 실행합니다
-  const sslOptions = {
-    //1. PEM을 사용하여 인증하는 경우(cert, ca, key파일을 사용하여 인증하는 경우)
-  //확장자명이 .pem인 경우도 있습니다.
-    ca: fs.readFileSync('./ca_bundle.crt'),
-    key: fs.readFileSync('./private.key'),
-    cert: fs.readFileSync('./certificate.crt'),
-  }
 
-/*
-//이 부분에 router등 설정을 해주면 됩니다.
-*/
-
-const httpsPort = config.web.ssl_port
-https.createServer(sslOptions, app, (req, res) => {
-  //console.log('필요한 코드 넣기');
-}).listen(httpsPort, () => {
-  console.log('https 서버 포트: ' + httpsPort);
-});
-
-// set up plain http server
-const httpRedirecter = express()
-
-// set up a route to redirect http to https
-httpRedirecter.get('*', (req, res) => {  
-  res.redirect('https://' + req.headers.host + req.url)
-
-  // Or, if you don't want to automatically detect the domain name from the request header, you can hard code it:
-  // res.redirect('https://example.com' + req.url);
-})
-
-httpRedirecter.listen(httpPort, () => {
-  console.log(`port: ${httpPort}`)
-})
-
-} else if (process.env.NODE_ENV === 'cloudflare') {
-  // 클플 보호모드+nginx에서는 리다이렉트 오류 방지를 위해 http 서버만 작동합니다
+if (config.env.NODE_ENV === 'replit') {
+  // repl 환경에서는 오류 방지를 위해 http 서버만 작동합니다
   app.listen(nginxPort, () => {
-    console.log(`=== CLOUDFLARE MODE ===\nport: ${nginxPort}`)
-  })
-} else if (process.env.NODE_ENV === 'nginx_develop') {
-  // 클플 보호모드+nginx+개발모드에서는 리다이렉트 오류 방지를 위해 http 서버만 작동합니다
-  app.listen(nginxPort, () => {
-    console.log(`=== NGINX+DEVELOPMENT MODE ===\nport: ${nginxPort}`)
+    console.log(`=== Repl.it MODE ===\nport: ${httpPort}`)
   })
 } else {
   // 개발모드에서는 http 서버만 작동합니다
