@@ -32,9 +32,18 @@ app.use('/views/api', express.static('public'))
 
 app.use(router)
 
-const httpPort = config.web.port
+app.disable('x-powered-by');
 
-if (config.env.NODE_ENV === 'replit') {
+const httpPort = config.web.port
+const httpsPort = config.web.ssl_port
+
+if (config.env.NODE_ENV == 'production') {
+  // SSL 작동합니다.
+  app.listen(httpsPort, () => {
+    console.log(`=== PRODUCTION MODE ===\nport: ${httpsPort}`)
+  })
+}
+else if (config.env.NODE_ENV == 'replit') {
   // repl 환경에서는 오류 방지를 위해 http 서버만 작동합니다
   app.listen(httpPort, () => {
     console.log(`=== Repl.it MODE ===\nport: ${httpPort}`)

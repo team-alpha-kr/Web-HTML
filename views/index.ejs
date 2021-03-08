@@ -20,8 +20,8 @@
 <body>
     <div id="root">
         <div class="App">
+            <%- include('./components/navbar.ejs') %>
             <div>
-                <%- include('./components/navbar.ejs') %>
                 <div class="index"><span class="index-topic">Team Alpha</span><span class="index-desc">공식 사이트</span><a href="/about" class="index-button">소개 보기</a></div>
                 <section class="introduce bg-1">
                     <div class="container right"><span class="cr-1 intro-topic">대시보드</span><span class="cr-1 intro-desc">대시보드를 확인해 많은 정보를 볼 수 있습니다.</span><button class="cr-1 intro-btn disable">(준비 중)</button></div>
@@ -34,6 +34,7 @@
                 </section>
             </div>
             <%- include('./components/footer.ejs') %>
+            <%- include('./components/channel.ejs') %>
         </div>
     </div>
     <!-- Global site tag (gtag.js) - Google Analytics -->

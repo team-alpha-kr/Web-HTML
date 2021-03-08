@@ -1,6 +1,6 @@
 # Team Alpha Main Web
 
-[![Run on Repl.it](https://repl.it/badge/github/team-alpha-kr/Web-HTML)](https://repl.it/github/team-alpha-kr/Web-HTML)
+[![Run on Repl.it](https://repl.it/badge/github/team-alpha-kr/Main-Web)](https://repl.it/github/team-alpha-kr/Main-Web)
 
 HTML과 Express 기반으로 제작하였습니다.
 
@@ -8,9 +8,6 @@ HTML과 Express 기반으로 제작하였습니다.
 
 - node_modules : node.js 작동 필요 파일(* 깃허브에는 올라가지 않음, npm i 명령어로 설치시 생성됨) (* 이하 경로는 Tree에 포함하지 않음)
 - public 폴더 : html에서 필요한 파일
-    - components 폴더 : navbar, footer등 include 파일
-        - navbar.html : navbar 파일
-        - footer.html : footer 파일
     - policy 폴더 : 이용약관, 개인정보 처리방침 등 원본 파일
         - privacy 폴더 : 개인정보 처리방침 원본 파일(* 이하 경로는 Tree에 포함하지 않음)
         - term 폴더 : 이용약관 원본 파일(* 이하 경로는 Tree에 포함하지 않음)
@@ -22,24 +19,29 @@ HTML과 Express 기반으로 제작하였습니다.
 - router 풀더 : 라우터 작동 필요 파일
     - main.js : 라우터 작동 파일
 - views 폴더 : html 파일
+    - components 폴더 : navbar, footer등 include 파일
+        - navbar.ejs : navbar 파일
+        - footer.ejs : footer 파일
+        - channel.ejs : 채널톡 구성성 파일
     - dashboard 폴더 : 대시보드 페이지(* 이하 경로는 Tree에 포함하지 않음)
     - team 폴더 : team과 관련된 페이지
-        - join.html : 채용 페이지
+        - join.ejs : 채용 페이지
     - term 폴더: 이용약관과 관련된 페이지
-        - index.html : 약관 선택 페이지
-        - preparing.html : 커밍순 페이지
-        - privacy.html : 개인정보취급방침 페이지
+        - index.ejs : 약관 선택 페이지
+        - privacy.ejs : 개인정보취급방침 페이지
         - service 폴더 : 서비스별 이용약관 리스트 페이지
-            - index.html : 서비스별 이용약관 리스트 페이지
+            - index.ejs : 서비스별 이용약관 리스트 페이지
             - (* 이외 파일은 Tree에 포함하지 않음)
-        - tos.html : 이용약관 페이지
-    - 403.html : 403 오류 페이지
-    - 404.html : 404 오류 페이지
-    - about.html : 소개 페이지
-    - bots.html : 봇 리스트 페이지
-    - discord.html : 디스코드 리다이렉트 페이지
-    - index.html : 메인 페이지
-    - members.html : 팀원 리스트 페이지
+        - tos.ejs : 이용약관 페이지
+    - 403.ejs : 403 오류 페이지
+    - 404.ejs : 404 오류 페이지
+    - about.ejs : 소개 페이지
+    - bots.ejs : 봇 리스트 페이지
+    - discord.ejs : 디스코드 리다이렉트 페이지
+    - index.ejs : 메인 페이지
+    - members.ejs : 팀원 리스트 페이지
+    - preparing.ejs : 커밍순 페이지
+    - preparing_nc.ejs : 커밍순 페이지(나브바, 푸터 삭제)
 - .gitignore : 깃에 올라가지 않는 파일
 - config.json : (* 깃허브에는 올라가지 않음, 아래 config.json 작성 방법을 참고하여 작성 필요)
 - ecosystem.config.js : EcoSystem 설정 파일
